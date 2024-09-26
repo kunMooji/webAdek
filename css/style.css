@@ -1,6 +1,6 @@
 :root {
-  --button: rgb(0, 60, 67);
-  --bg: rgb(227, 254, 247);
+  --button: rgb(110, 181, 130);
+  --bg: rgb(255, 255, 255);
   --navbar: rgba(0, 60, 67, 0.8);
   --sekunder: rgb(48, 99, 104);
 }
@@ -28,7 +28,7 @@ body {
 
 /* Download Button */
 .download-buttons {
-  margin-top: 18px;
+  margin-top: 0.2rem;
 }
 
 .download-buttons .btn {
@@ -212,12 +212,14 @@ body {
   right: 1rem;
   cursor: pointer;
 }
-/* Hiro Section */
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("../gambar/dapur.jpg");
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgb(255, 255, 255) 100%),
+    url("../gambar/dapur.jpg"); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -233,7 +235,7 @@ body {
   bottom: 0;
   background: linear-gradient(
     0deg,
-    rgb(227, 254, 247, 1) 2%,
+    rgb(255, 255, 255) 2%,
     rgba(8, 131, 149, 0) 80%
   );
 }
@@ -250,12 +252,11 @@ body {
 }
 
 .hero .content p {
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin-top: 1rem;
   line-height: 1.4;
   font-weight: 240;
   text-shadow: 1px 1px 3px rgba(250, 250, 250, 0.5);
-  /* mix-blend-mode: difference; */
 }
 
 .hero .content .cta {
@@ -268,12 +269,13 @@ body {
   border-radius: 0.5rem;
   box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
 }
-/* About Section */
+/* About and Menu Sections */
 .about,
 .meanu,
 .contact {
   padding: 6rem 7% 1.4rem;
 }
+
 .about h2,
 .meanu h2,
 .contact h2 {
@@ -284,66 +286,84 @@ body {
 
 .about .row {
   display: flex;
+  flex-direction: column; 
 }
 
 .about .row .about-img {
-  flex: 1 1 45rem;
+  flex: 1 1 100%;
 }
+
 .about .row .about-img img {
+  margin-top: 1.5rem;
   width: 100%;
-  border-radius: 50px;
+  height: auto;
+  border-radius: 20px;
 }
 
 .about .row .content {
-  flex: 1 1 35rem;
+  flex: 1 1 100%;
   padding: 0 1rem;
 }
 
 .about .row .content h3 {
-  font-size: 2.6rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-top: 0.2rem;
 }
 
 .about .row .content p {
-  font-size: 1.2rem;
-  /* font-weight: 140; */
-  line-height: 1.6;
+  font-size: 1.3rem; 
+  line-height: 1.5;
 }
 
 /* Menu Section */
 .meanu h2,
 .contact h2 {
+  font-size: 1.8rem; 
   margin-bottom: 1rem;
+  margin-top: -2rem;
 }
 .meanu p,
 .contact p {
   text-align: center;
-  max-width: 40rem;
+  max-width: 100%;
   margin: auto;
-  font-size: 1.2rem;
+  font-size: 1rem; 
   line-height: 1.5;
 }
 
 .meanu .row {
-  /* display: flex; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 1.5rem;
-
-  /* flex-wrap untuk mengatur kalau menu kebanyakan otomatis kebawah */
-  /* flex-wrap: wrap; */
-  margin-top: 5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   justify-content: center;
 }
 
 .meanu .row .menu-card {
   text-align: center;
-  padding: 5rem;
-  border: 2.5px solid #666;
-  background-color: #e1f9f6;
-  border-radius: 50px; /* Membuat border berbentuk oval */
+  margin-top: 3rem; 
+  background-color: #ffffff;
 }
 
+.meanu .row .menu-card img {
+  width: 40%; 
+  margin-left: 2rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+.meanu .row .menu-card3 {
+  text-align: left;
+  padding: 1rem;
+  border: 2px solid #666;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+}
+
+.menu-card-img3{
+  margin-left: 2rem;
+  height: auto;
+  margin: 0 auto;
+}
 
 .meanu .menu-icons {
   display: flex;
@@ -352,8 +372,8 @@ body {
 }
 
 .meanu .menu-icons a {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem; /* Adjusted for mobile */
+  height: 3rem;
   color: black;
   margin: 0.3rem;
   border: 1px solid #666;
@@ -369,27 +389,43 @@ body {
   border: 1px solid var(--button);
 }
 
-.meanu .row .menu-card img {
-  border-radius: 28%;
-  /* box-shadow untuk memberi bayangan gambar */
-  box-shadow: 10px 2px 2px rgba(99, 96, 96, 0.5);
-  /* width: 70%; */
-  height: 20rem;
-}
-
 .meanu .row .menu-card-title {
-  margin-top: 1rem auto 0.5rem;
+  margin-top: 0.5rem auto 0.5rem;
 }
 
 .meanu .row .menu-stars {
-  padding: 0.8rem;
-  font-size: 1.7rem;
+  padding: 0.5rem;
   color: black;
 }
 
-.meanu .menu-stars .star-full {
-  color: rgba(0, 60, 67, 0.2);
-  fill: var(--sekunder);
+
+@media screen and (min-width: 769px) {
+  .about .row {
+    flex-direction: row;
+  }
+
+  .meanu .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about .row {
+    flex-direction: column;
+  }
+  .about .row .about-img,
+  .about .row .content {
+    flex: 0 0 100%;
+  }
+
+  .meanu .row {
+    grid-template-columns: 1fr;
+  }
+
+  .meanu .row .menu-card img {
+    width: 60%; 
+    border-radius: 20%; /
+  }
 }
 
 /* Contact Section */
@@ -397,20 +433,21 @@ body {
   display: flex;
   margin-top: 2rem;
   background-color: #77b0aa;
-
-  /* flex-wrap: wrap; */
+  border-radius: 20px; /* Membuat sudut row menjadi membulat */
 }
 
 .contact .row .maps {
   flex: 1 1 45rem;
   width: 100%;
   object-fit: cover;
+  border-radius: 20px 0 0 20px; /* Membulatkan hanya sisi kiri untuk menyatu dengan form */
 }
 
 .contact .row form {
   flex: 1 1 45rem;
   padding: 5rem 2rem;
   text-align: center;
+  border-radius: 0 20px 20px 0; /* Membulatkan hanya sisi kanan */
 }
 
 .contact .row form .input-group {
@@ -420,6 +457,7 @@ body {
   background-color: var(--bg);
   border: 1px solid rgb(227, 254, 247);
   padding-left: 2rem;
+  border-radius: 10px; /* Membulatkan input group */
 }
 
 .contact .row .input-group input {
@@ -428,6 +466,7 @@ body {
   font-size: 1.3rem;
   background: none;
   color: black;
+  border-radius: 10px; /* Membulatkan input */
 }
 
 .contact .row form .btn {
@@ -438,7 +477,9 @@ body {
   color: white;
   background-color: var(--button);
   cursor: pointer;
+  border-radius: 20px; /* Membulatkan tombol */
 }
+
 
 /* Footer */
 footer {
@@ -497,7 +538,6 @@ h2.text-center {
   margin-bottom: 20px;
 }
 
-/* Form group styling */
 .form-group {
   margin-bottom: 15px;
 }
@@ -623,9 +663,9 @@ a:hover {
     flex-wrap: wrap;
   }
   .about .row .about-img img {
-    height: 24rem;
+    height: 26rem;
     object-fit: cover;
-    object-position: center;
+    object-position: right;
   }
 
   .about .row .content {

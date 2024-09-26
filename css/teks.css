@@ -54,7 +54,7 @@
 .menu-card-img {
     opacity: 0;
     transform: translateY(20px); /* Pindahkan gambar ke bawah 20px */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Transisi animasi */
+    transition: opacity 0.6s ease, transform 0.9s ease; /* Transisi animasi */
   }
   
   /* Ketika elemen muncul di layar */
