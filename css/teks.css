@@ -1,6 +1,3 @@
-
-
-/* Animasi munculnya teks */
 .content h1 {
     opacity: 0;
     transform: translateY(50px); /* Teks muncul dari bawah */

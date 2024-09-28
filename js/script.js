@@ -11,21 +11,19 @@ window.addEventListener("scroll", function() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show'); // Menampilkan gambar atau button
+        entry.target.classList.add('show');
       } else {
-        entry.target.classList.remove('show'); // Menghilangkan gambar atau button ketika tidak terlihat
+        entry.target.classList.remove('show');
       }
     });
   }, {
-    threshold: 0.5 // Trigger animasi saat 50% elemen terlihat
+    threshold: 0.5 
   });
-  
-  // Mengamati semua gambar
+
   images.forEach(img => {
     observer.observe(img);
   });
   
-  // Mengamati semua button
   buttons.forEach(btn => {
     observer.observe(btn);
   });
