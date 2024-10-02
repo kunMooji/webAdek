@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>admin lek</h1>
-        <button onclick="window.location.href='editweb.php'">lihat tabel</button>
+        <button onclick="window.location.href='editweb_landingabout.php'">lihat tabel</button>
     </div>
 </body>
 </html>

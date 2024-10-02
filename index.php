@@ -19,60 +19,83 @@
   </head>
 
   <body>
-<!-- Navbar -->
-<nav class="navbar">
-  <a href="#" class="navbar-logo">ADEK <span>(Ayo Diet Efektif Konsisten)</span></a>
-  <div class="navbar-nav">
-    <a href="#home">Home</a>
-    <a href="#about">Tentang Kami</a>
-    <a href="#features">Fitur Kami</a>
-    <a href="#contact">Kontak</a>
-  </div>
-  <div class="navbar-extra">
-    <a href="login.php">LOGIN</a>
-    <a href="#">EN</a>
-    <a href="#" class="learn-more-btn">Learn More</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="content">
-    <h1>Be aware of every bite, and eat with pure delight >
-    <a href="#features" class="cta">Mulai Sekarang</a>
-  </div>
-  <div class="hero-image">
-    <img src="path-to-your-image.jpg">
-  </div>
-</section>
-
-<!-- About Section Start -->
-<section id="about" class="about">
-  <h2>Tentang ADEK</h2>
-  <div class="row">
-    <div class="about-img">
-      <img src="../warung8/gambar/tentangKami.jpg" alt="Tentang ADEK" class ="menu-card-img"/>
-    </div>
-    <div class="content">
-      <h3>Kenapa Pilih ADEK?</h3>
-      <p>
-        ADEK (Ayo Diet Efektif Konsisten) adalah aplikasi yang dirancang khusus untuk membantu kamu mencapai target diet dan kesehatan dengan lebih mudah dan menyenangkan. Melalui fitur-fitur canggih, ADEK menawarkan perencanaan makan yang dipersonalisasi sesuai dengan kebutuhan tubuhmu, sehingga kamu dapat mengikuti diet yang tepat tanpa merasa terbebani.
-
-        Tidak hanya itu, ADEK juga dilengkapi dengan pelacakan kalori yang akurat, memudahkan kamu untuk mengetahui jumlah kalori yang dikonsumsi setiap hari.
-        </p>
-      
-      <div class="content">
-        <h3> Download Sekarang !</h3>
-      </div>
-      <!-- Tambahkan tombol download aplikasi di sini -->
-      <div class="download-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.adekapp" class="btn btn-primary">Download Android</a>
-        <a href="https://apps.apple.com/id/app/adekapp" class="btn btn-secondary">Download untuk iOS</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- About Section End -->
+    <?php
+    require_once 'config.php';
+    
+    $query = "SELECT * FROM landing_content LIMIT 1";
+    $stmt = $pdo->query($query);
+    $content = $stmt->fetch(PDO::FETCH_ASSOC);
+    ?>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><?php echo htmlspecialchars($content['judul']); ?></title>
+    
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <script src="https://unpkg.com/feather-icons"></script>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/teks.css">
+        <link rel="stylesheet" href="js/script.js">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+          <a href="#" class="navbar-logo">ADEK <span>(Ayo Diet Efektif Konsisten)</span></a>
+          <div class="navbar-nav">
+            <a href="#home">Home</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#features">Fitur Kami</a>
+            <a href="#contact">Kontak</a>
+          </div>
+          <div class="navbar-extra">
+            <a href="login.php">LOGIN</a>
+            <a href="#">EN</a>
+            <a href="#" class="learn-more-btn">Learn More</a>
+          </div>
+        </nav>
+    
+        <section class="hero">
+          <div class="content">
+            <h1><?php echo htmlspecialchars($content['hero_title']); ?></h1>
+            <a href="#features" class="cta"><?php echo htmlspecialchars($content['hero_cta']); ?></a>
+          </div>
+          <div class="hero-image">
+            <!-- <img src="<?php echo htmlspecialchars($content['gambar_landing_page']); ?>"> -->
+          </div>
+        </section>
+    
+        <!-- About Section Start -->
+        <section id="about" class="about">
+          <h2><?php echo htmlspecialchars($content['about_title']); ?></h2>
+          <div class="row">
+          <div class="about-img">
+              <img src="display_image.php?id=1" alt="Tentang ADEK" class="menu-card-img"/>
+          </div>
+            <div class="content">
+              <h3>Kenapa Pilih ADEK?</h3>
+              <p><?php echo nl2br(htmlspecialchars($content['about_description'])); ?></p>
+              
+              <div class="content">
+                <h3>Download Sekarang !</h3>
+              </div>
+              <!-- Tambahkan tombol download aplikasi di sini -->
+              <div class="download-buttons">
+              <a href="<?php echo htmlspecialchars($content['android_download']); ?>" class="btn btn-primary">Download Android</a>
+              <a href="<?php echo htmlspecialchars($content['ios_download']); ?>" class="btn btn-secondary">Download untuk iOS</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- About Section End -->
 
   
 <!-- Fitur Kami Section Start (Previously Menu) -->

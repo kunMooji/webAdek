@@ -51,11 +51,11 @@ body {
 }
 
 .download-buttons .btn:hover {
-  background-color: var(--sekunder); /* Menggunakan warna sekunder untuk hover */
+  background-color: var(--sekunder);  
 }
 
 .btn-primary {
-  background-color: #4CAF50; /* Warna hijau untuk Android */
+  background-color: #4CAF50;  
 }
 
 .btn-primary:hover {
@@ -63,7 +63,7 @@ body {
 }
 
 .btn-secondary {
-  background-color: #007bff; /* Warna biru untuk iOS */
+  background-color: #007bff;  
 }
 
 .btn-secondary:hover {
@@ -324,35 +324,35 @@ body {
 
 .meanu .row .menu-card {
     text-align: center;
-    margin-top: 1.5rem; /* Mengurangi jarak atas */
+    margin-top: 1.5rem;   
     background-color: #ffffff;
     padding: 1rem; 
 }
 
 .meanu .row .menu-card img {
     width: 40%;
-    margin-left: 1rem; /* Mengurangi margin kiri */
+    margin-left: 1rem;  
     height: auto;
     margin: 0 auto;
 }
 
 .meanu .row .menu-card img2 {
     width: 20%;
-    margin-left: 1rem; /* Mengurangi margin kiri */
+    margin-left: 1rem;  
     height: auto;
     margin: 0 auto;
 }
 
 .meanu .row .menu-card3 {
     text-align: left;
-    padding: 0.5rem; /* Mengurangi padding */
+    padding: 0.5rem;  
     border: 2px solid #666;
     background-color: #f8f8f8;
     border-radius: 20px;
 }
 
 .menu-card-img3 {
-    margin-left: 1rem; /* Mengurangi margin kiri */
+    margin-left: 1rem;  
     height: auto;
     margin: 0;
 }
@@ -387,7 +387,7 @@ body {
     border-radius: 20%; /
   }
 }
-/* Gaya dasar untuk bagian testimoni */
+
 #testimoni {
   background-color: #f9f9f9;
   padding: 50px 0;
@@ -400,8 +400,8 @@ body {
   gap: 20px;
   overflow-x: auto;
   padding: 0 20px;
-  scroll-snap-type: x mandatory;  /* Memastikan scroll snapping */
-  -webkit-overflow-scrolling: touch;  /* Memastikan smooth scrolling di perangkat mobile */
+  scroll-snap-type: x mandatory;  
+  -webkit-overflow-scrolling: touch;  
 }
 
 .testimoni-item {
@@ -411,7 +411,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
   flex-shrink: 0;
-  scroll-snap-align: center;  /* Menyelaraskan item saat scrolling */
+  scroll-snap-align: center; 
 }
 
 .testimoni-item img {
@@ -432,12 +432,10 @@ body {
   color: #333;
 }
 
-/* Menyembunyikan scrollbar secara visual */
 .testimoni-slider::-webkit-scrollbar {
   display: none;
 }
 
-/* Smooth scrolling */
 .testimoni-slider {
   scroll-behavior: smooth;
 }
@@ -448,21 +446,21 @@ body {
   display: flex;
   margin-top: 2rem;
   background-color: #77b0aa;
-  border-radius: 20px; /* Membuat sudut row menjadi membulat */
+  border-radius: 20px; 
 }
 
 .contact .row .maps {
   flex: 1 1 45rem;
   width: 100%;
   object-fit: cover;
-  border-radius: 20px 0 0 20px; /* Membulatkan hanya sisi kiri untuk menyatu dengan form */
+  border-radius: 20px 0 0 20px; 
 }
 
 .contact .row form {
   flex: 1 1 45rem;
   padding: 5rem 2rem;
   text-align: center;
-  border-radius: 0 20px 20px 0; /* Membulatkan hanya sisi kanan */
+  border-radius: 0 20px 20px 0; 
 }
 
 .contact .row form .input-group {
@@ -472,7 +470,7 @@ body {
   background-color: var(--bg);
   border: 1px solid rgb(227, 254, 247);
   padding-left: 2rem;
-  border-radius: 10px; /* Membulatkan input group */
+  border-radius: 10px; 
 }
 
 .contact .row .input-group input {
@@ -481,7 +479,7 @@ body {
   font-size: 1.3rem;
   background: none;
   color: black;
-  border-radius: 10px; /* Membulatkan input */
+  border-radius: 10px; 
 }
 
 .contact .row form .btn {
@@ -492,7 +490,7 @@ body {
   color: white;
   background-color: var(--button);
   cursor: pointer;
-  border-radius: 20px; /* Membulatkan tombol */
+  border-radius: 20px; 
 }
 
 
