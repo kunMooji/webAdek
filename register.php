@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password'];
 
-    // MEMVALIDASI INPUTAN 
+    // VALIDASI INPUTAN USER 
     if ($password !== $confirmPassword) {
         $error = 'Password dan konfirmasi password tidak cocok!';
     } else {
@@ -37,9 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Link ke file CSS di folder css -->
-      <link href="css/LogReg.css" rel="stylesheet"> <!-- Mengarahkan ke styles.css di folder 'css' -->
-
+     <link href="css/LogReg.css" rel="stylesheet">
     <style>
         body {
             display: flex;

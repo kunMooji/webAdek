@@ -2,7 +2,7 @@
 require_once 'config.php';
 
 if (isset($_POST['update'])) {
-    $id = 1; // Assuming we're always editing the first (and only) row
+    $id = 1; 
     $hero_title = $_POST['hero_title'];
     $hero_cta = $_POST['hero_cta'];
     $about_title = $_POST['about_title'];
@@ -10,7 +10,7 @@ if (isset($_POST['update'])) {
     $android_download = $_POST['android_download'];
     $ios_download = $_POST['ios_download'];
 
-    // Handle file uploads
+    // upload
     $hero_image = handleFileUpload('hero_image');
     $about_image = handleFileUpload('about_image');
 
@@ -45,20 +45,28 @@ if (isset($_POST['update'])) {
     }
 }
 
-// Function to handle file upload
 function handleFileUpload($field_name) {
     if (isset($_FILES[$field_name]) && $_FILES[$field_name]['error'] == 0) {
         $allowed = ['jpg', 'jpeg', 'png', 'gif'];
         $filename = $_FILES[$field_name]['name'];
         $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
         if (in_array($ext, $allowed)) {
-            return file_get_contents($_FILES[$field_name]['tmp_name']);
+            // Tambahkan logging untuk debug
+            error_log("File uploaded: " . $filename);
+            error_log("File size: " . $_FILES[$field_name]['size'] . " bytes");
+            
+            $image_data = file_get_contents($_FILES[$field_name]['tmp_name']);
+            if ($image_data === false) {
+                error_log("Failed to read image file");
+                return null;
+            }
+            return $image_data;
         }
     }
     return null;
 }
 
-// Fetch current content
+// ngambil data current
 $query = "SELECT * FROM landing_content WHERE id = 1";
 $stmt = $pdo->query($query);
 $content = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -70,6 +78,7 @@ $content = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Landing Page Content</title>
+    <link rel="stylesheet" href="css/edit.css">
 </head>
 <body>
     <h1>Edit Landing Page Content</h1>

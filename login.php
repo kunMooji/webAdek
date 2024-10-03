@@ -29,10 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     
-    <!-- Link ke file CSS di folder css -->
-    <link href="css/LogRes.css" rel="stylesheet"> <!-- Mengarahkan ke styles.css di folder 'css' -->
-
-    <!-- Link ke Bootstrap -->
+    <link href="css/LogRes.css" rel="stylesheet"> 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -75,12 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
-    <!-- Link ke jQuery, Popper.js, dan Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Link ke file JS di folder js -->
-    <script src="js/scripts.js"></script> <!-- Mengarahkan ke scripts.js di folder 'js' -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
