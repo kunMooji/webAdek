@@ -262,12 +262,19 @@ body {
 
 .about h2,
 .meanu h2,
+.heanu h3,  
 .contact h2 {
   text-align: center;
   font-size: 3.3rem;
   margin-bottom: 3rem;
+  margin-top: -2rem;
 }
-
+.meanu h1 {
+  text-align: center;
+  font-size: 3.3rem;
+  margin-bottom: 3rem;
+  margin-top: -5em;
+}
 .about .row {
   display: flex;
   flex-direction: column; 
@@ -299,8 +306,7 @@ body {
   line-height: 1.5;
 }
 
-/* Menu Section */
-.meanu h2,
+
 .contact h2 {
   font-size: 1.8rem; 
   margin-bottom: 1rem;
@@ -311,52 +317,47 @@ body {
   text-align: center;
   max-width: 100%;
   margin: auto;
-  font-size: 1rem; 
+  font-size: 1.2rem; 
   line-height: 1.5;
 }
 
 .meanu .row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.25rem;
   justify-content: center;
 }
 
 .meanu .row .menu-card {
-    text-align: center;
-    margin-top: 1.5rem;   
-    background-color: #ffffff;
-    padding: 1rem; 
+  margin-top: 5rem;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .meanu .row .menu-card img {
-    width: 40%;
-    margin-left: 1rem;  
-    height: auto;
-    margin: 0 auto;
+  width: 40%;
+  height: auto;
+  margin-bottom: rem;
+}
+.meanu .row .menu-card2 img {
+  width: 70%;
+  height: auto;
+  margin-bottom: 0rem;
 }
 
-.meanu .row .menu-card img2 {
-    width: 20%;
-    margin-left: 1rem;  
-    height: auto;
-    margin: 0 auto;
+.meanu .row {
+  grid-row-gap: 15rem;
 }
 
-.meanu .row .menu-card3 {
-    text-align: left;
-    padding: 0.5rem;  
-    border: 2px solid #666;
-    background-color: #f8f8f8;
-    border-radius: 20px;
+/* Negative margin to pull bottom row up */
+.meanu .row > :nth-child(n+3) {
+  margin-top: -15rem;
 }
-
-.menu-card-img3 {
-    margin-left: 1rem;  
-    height: auto;
-    margin: 0;
-}
-
 
 @media screen and (min-width: 769px) {
   .about .row {
@@ -365,7 +366,6 @@ body {
 
   .meanu .row {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 2rem;
   }
 }
 
@@ -389,11 +389,9 @@ body {
 }
 
 #testimoni {
-  background-color: #f9f9f9;
-  padding: 50px 0;
-  text-align: center;
+  margin-top: 0; /* Menghapus jarak di atas #testimoni */
+  padding-top: 0; /* Menghapus padding di atas #testimoni */
 }
-
 /* Container untuk slider */
 .testimoni-slider {
   display: flex;
@@ -405,6 +403,7 @@ body {
 }
 
 .testimoni-item {
+  margin-top: 2rem;
   background: white;
   border-radius: 10px;
   padding: 20px;

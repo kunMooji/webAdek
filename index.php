@@ -105,7 +105,6 @@
         <div class="content">
           <h3>Kenapa Pilih ADEK?</h3>
           <p><?php echo nl2br(htmlspecialchars($content['about_description'])); ?></p>
-
           <div class="content">
             <h3>Download Sekarang !</h3>
           </div>
@@ -115,7 +114,6 @@
             <a href="<?php echo htmlspecialchars($content['ios_download']); ?>" class="btn btn-secondary">Download untuk iOS</a>
           </div>
         </div>
-      </div>
     </section>
     <!-- About Section End -->
 
@@ -124,7 +122,7 @@
       <h2><?php echo htmlspecialchars($fitur_content['hero_title'] ?? 'Capai target kesehatanmu dengan fitur yang lengkap'); ?></h2>
       <p><?php echo htmlspecialchars($fitur_content['hero_cta'] ?? 'Deskripsi singkat tentang fitur-fitur yang tersedia.'); ?></p>
       <div class="row">
-        <div class="menu-card-img3">
+        <div class="menu-card">
           <?php
           if (isset($fitur_content['hero_image'])) {
             displayImage($fitur_content['hero_image'], "Hero Image", "menu-card-img");
@@ -171,7 +169,7 @@
 
     <!-- Testimonial Section -->
     <section class="meanu" id="testimonials">
-      <h2>Apa Kata Pengguna Kami?</h2>
+      <h1>Apa Kata Pengguna Kami?</h1>
       <div class="testimoni-slider">
         <?php for ($i = 1; $i <= 4; $i++): ?>
           <div class="testimoni-item">

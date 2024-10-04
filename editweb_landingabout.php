@@ -45,22 +45,14 @@ if (isset($_POST['update'])) {
     }
 }
 
+// fungsi buat nge handle file uploadnya
 function handleFileUpload($field_name) {
     if (isset($_FILES[$field_name]) && $_FILES[$field_name]['error'] == 0) {
         $allowed = ['jpg', 'jpeg', 'png', 'gif'];
         $filename = $_FILES[$field_name]['name'];
         $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
         if (in_array($ext, $allowed)) {
-            // Tambahkan logging untuk debug
-            error_log("File uploaded: " . $filename);
-            error_log("File size: " . $_FILES[$field_name]['size'] . " bytes");
-            
-            $image_data = file_get_contents($_FILES[$field_name]['tmp_name']);
-            if ($image_data === false) {
-                error_log("Failed to read image file");
-                return null;
-            }
-            return $image_data;
+            return file_get_contents($_FILES[$field_name]['tmp_name']);
         }
     }
     return null;
